@@ -132,10 +132,10 @@ export default function Home() {
         }>
           {tokenIdMinted}/10 have been minted
         </div>
-        {render}
+        {render()}
       </div>
       <div>
-        <img className={styles.image} src="./LW3Punks/1.jpg"/>
+        <img className={styles.image} src="./LW3punks/1.png"/>
       </div>
     </div>
     <footer className={styles.footer}>Made with &#10084; by Crypto Punks</footer>
