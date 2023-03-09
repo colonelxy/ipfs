@@ -13,4 +13,4 @@ npx hardhat run scripts/deploy.js
 ```
 
 
-Anwani ya Kandarasi ya LW3Punks ni: 0x95bf4050752b87D7A9D6276e020291E1c91Fa450
+Anwani ya Kandarasi ya LW3Punks ni: 0x6eb54043D5e9A265db3791B6d0ac6B7cE3f714fd

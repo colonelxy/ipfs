@@ -1,20 +1,24 @@
-const {ethers} = require("hardhat");
-require("dotenv").config({path: ".env"});
+const { ethers } = require("hardhat");
+require("dotenv").config({ path: ".env" });
 
 async function main() {
-  const metadataURL = "ipfs://Qmbygo38DWF1V8GttM1zy89KzyZTPU2FLUzQtiDvB7q6i5";
+  const metadataURL = "ipfs://Qmbygo38DWF1V8GttM1zy89KzyZTPU2FLUzQtiDvB7q6i5/";
 
-  const punksContract = await ethers.getContractFactory("LW3Punks");
+  const lw3PunksContract = await ethers.getContractFactory("LW3Punks");
 
-  const deployedContract = await punksContract.deploy(metadataURL);
-  await deployedContract.deployed();
+  // deploy the contract
+  const deployedLW3PunksContract = await lw3PunksContract.deploy(metadataURL);
 
-  console.log("Anwani ya Kandarasi ya LW3Punks ni:", deployedContract.address);
-};
+  await deployedLW3PunksContract.deployed();
 
+  // print the address of the deployed contract
+  console.log("LW3Punks Contract Address:", deployedLW3PunksContract.address);
+}
+
+// Call the main function and catch if there is any error
 main()
-.then(() => process.exit(0))
-.catch((e) => {
-  console.error(e)
-  process.exit(1)
-})
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
